@@ -54,19 +54,19 @@ function Users(){
 
     return (
         <div>
-        <ul>
-                <li key={1}>
+        <ul className="usersList">
+                <li key={1} className="userList">
                 <Name value="Krishna"/>  
                 <Total score={scoreK}/> 
                 <Wedge score={scoreK} totalScore={totalScore}/> 
                 </li>
-                <li key={2}>
+                <li key={2} className="userList">
                 <Name value="Nanda"/>  
                 <Total score={scoreN}/> 
                 <Wedge score={scoreN} totalScore={totalScore}/> 
 
                 </li>
-                <li key={3}>
+                <li key={3} className="userList">
                 <Name value="Shesh"/> 
                 <Total score={scoreS}/> 
                 <Wedge score={scoreS} totalScore={totalScore}/>     

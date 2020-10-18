@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {v4 as uuidv4} from 'uuid'
 import io from "socket.io-client";
+import '../index.css'
 
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
@@ -51,36 +52,54 @@ export default function Options() {
 
     return (
         <div>
-            <ul>
+            <ol>
                 <li key={1}>
                     <p>Nepal</p>
-                        <ul>{answerOption1.map((item,index)=>(
-                            <li key={uuidv4()}>{item.personalInfo.givenName}</li>
+                        <ul className="optionUsers">{answerOption1.map((item,index)=>(
+                            <li key={uuidv4()}><img
+                            style={{ width: 20, marginTop: -5 }}
+                            className="gImage"
+                            src={item.personalInfo.imageUrl}
+                            /></li>
                         ))}
                         </ul>
                 </li>
                 <li key={2}>
-                    <p>India</p>
-                    <ul>{answerOption2.map((item,index)=>(
-                            <li key={uuidv4()}>{item.personalInfo.givenName}</li>
-                        ))}
-                        </ul>
+                    <div>
+                        <p>India</p>
+                        <ul className="optionUsers">{answerOption2.map((item,index)=>(
+                                <li key={uuidv4()}><img
+                                style={{ width: 20, marginTop: -5 }}
+                                className="gImage"
+                                src={item.personalInfo.imageUrl}
+                                /></li>
+                            ))}
+                            </ul>
+                    </div>
                 </li>
                 <li key={3}>
                     <p>China</p>
-                    <ul>{answerOption3.map((item,index)=>(
-                            <li key={uuidv4()}>{item.personalInfo.givenName}</li>
+                    <ul className="optionUsers">{answerOption3.map((item,index)=>(
+                            <li key={uuidv4()}><img
+                            style={{ width: 20, marginTop: -5 }}
+                            className="gImage"
+                            src={item.personalInfo.imageUrl}
+                            /></li>
                         ))}
                         </ul>
                 </li>
                 <li key={4}>
                     <p>Philipines</p>
-                    <ul>{answerOption4.map((item,index)=>(
-                            <li key={uuidv4()}>{item.personalInfo.givenName}</li>
+                    <ul className="optionUsers">{answerOption4.map((item,index)=>(
+                            <li key={uuidv4()}><img
+                            style={{ width: 20, marginTop: -5 }}
+                            className="gImage"
+                            src={item.personalInfo.imageUrl}
+                            /></li>
                         ))}
                         </ul>
                 </li>
-            </ul>
+            </ol>
         </div>
     )
 }

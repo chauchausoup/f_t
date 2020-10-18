@@ -12,13 +12,13 @@ export default function Quiz() {
     const handleQuizButtonApp=()=>{
         history.push(`/triviaQuizApp`)
     }
+    
     return (
         <>
         <img
           style={{ width: 30, marginTop: -5 }}
           className="gImage"
-          src="https://lh3.googleusercontent.com/a-/AOh14Gh_eIr194U36wPfApf8NCMvCpJliayGgHe_9m0N=s96-c"
-          alt="doge"
+          src={JSON.parse(localStorage.getItem("personalInfo")).imageUrl}
         />
         <br/>
         <button onClick={handleQuizButtonApp}>App</button>
