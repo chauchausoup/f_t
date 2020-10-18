@@ -7,7 +7,7 @@ import Users from './users';
 
 export default function QuizScreen() {
     return (
-        <div className="quizScreen">
+        <div className="quizScreenf">
             <h1>Trivia Quiz Screen</h1>
             <hr/>
             <Dasboard/>

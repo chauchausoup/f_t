@@ -7,6 +7,7 @@ const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
 
+var quizOnes = require('../data/quiz1.json')
 
 
 export default function Options() {
@@ -54,7 +55,7 @@ export default function Options() {
         <div>
             <ol>
                 <li key={1}>
-                    <p>Nepal</p>
+                    <p>{quizOnes[0].options[0].value}</p>
                         <ul className="optionUsers">{answerOption1.map((item,index)=>(
                             <li key={uuidv4()}><img
                             style={{ width: 20, marginTop: -5 }}
@@ -66,7 +67,7 @@ export default function Options() {
                 </li>
                 <li key={2}>
                     <div>
-                        <p>India</p>
+                        <p>{quizOnes[0].options[1].value}</p>
                         <ul className="optionUsers">{answerOption2.map((item,index)=>(
                                 <li key={uuidv4()}><img
                                 style={{ width: 20, marginTop: -5 }}
@@ -78,7 +79,7 @@ export default function Options() {
                     </div>
                 </li>
                 <li key={3}>
-                    <p>China</p>
+                    <p>{quizOnes[0].options[2].value}</p>
                     <ul className="optionUsers">{answerOption3.map((item,index)=>(
                             <li key={uuidv4()}><img
                             style={{ width: 20, marginTop: -5 }}
@@ -89,7 +90,7 @@ export default function Options() {
                         </ul>
                 </li>
                 <li key={4}>
-                    <p>Philipines</p>
+                    <p>{quizOnes[0].options[3].value}</p>
                     <ul className="optionUsers">{answerOption4.map((item,index)=>(
                             <li key={uuidv4()}><img
                             style={{ width: 20, marginTop: -5 }}
