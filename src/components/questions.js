@@ -1,10 +1,16 @@
-import React from 'react'
-var quizOnes = require('../data/quiz1.json')
+import React, { useEffect,useContext } from 'react'
+import {Quiz1Context} from '../context/Quiz1Context'
 
-export default function questions() {
+export default function Questions() {
+    const { question} = useContext(Quiz1Context);
+    const [qText,setQuestion] = question;
+    
     return (
         <div>
-            <h3>{quizOnes[0].question}</h3>
+            <h3>{qText}</h3>
         </div>
     )
 }
+
+
+

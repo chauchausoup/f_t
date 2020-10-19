@@ -1,5 +1,5 @@
 import React from 'react'
-import Dasboard from './dashboard';
+import Dashboard from './dashboard';
 import Questions from './questions';
 import Options from './options';
 import Users from './users';
@@ -7,16 +7,23 @@ import Users from './users';
 
 export default function QuizScreen() {
     return (
-        <div className="quizScreenf">
-            <h1>Trivia Quiz Screen</h1>
+       <div className="quizScreenf">
+       <h1>Trivia Quiz Screen</h1>
             <hr/>
-            <Dasboard/>
+           
+            <Dashboard/>
             <hr/>
             <Questions/>
             <hr/>
-            <Options/>
+            <Options />
             <hr/>
-            <Users/>
-        </div>
+            <Users/> 
+       
+       </div>
+       
     )
 }
+
+
+
+

@@ -1,131 +1,137 @@
 [{
     "category":"History",
-    "roundNo":4,
+    "roundNo":"1",
+    "roundName":"General",
     "question":"What is your country name?",
-    "options":[{
-        "value":"Nepal",
+    "optione":[{
+        "val":"Nepal",
         "isCorrect":true
     },
     {
-        "value":"India",
+        "val":"India",
         "isCorrect":false
     },
     {
-        "value":"China",
+        "val":"China",
         "isCorrect":false
     },
     {
-        "value":"Philipines",
+        "val":"Philipines",
         "isCorrect":false
     }
 ]
 },
 {
     "category":"History2",
-    "roundNo":4,
+    "roundNo":"2",
+    "roundName":"General",
     "question":"What is your country name?2",
-    "options":[{
-        "value":"Nepal2",
+    "optione":[{
+        "val":"Nepal2",
         "isCorrect":true
     },
     {
-        "value":"India2",
+        "val":"India2",
         "isCorrect":false
     },
     {
-        "value":"China2",
+        "val":"China2",
         "isCorrect":false
     },
     {
-        "value":"Philipines2",
+        "val":"Philipines2",
         "isCorrect":false
     }
 ]
 },
 {
     "category":"History3",
-    "roundNo":4,
+    "roundNo":"3",
+    "roundName":"General",
     "question":"What is your country name?3",
-    "options":[{
-        "value":"Nepal3",
+    "optione":[{
+        "val":"Nepal3",
         "isCorrect":true
     },
     {
-        "value":"India3",
+        "val":"India3",
         "isCorrect":false
     },
     {
-        "value":"China3",
+        "val":"China3",
         "isCorrect":false
     },
     {
-        "value":"Philipines3",
+        "val":"Philipines3",
         "isCorrect":false
     }
 ]
 },
 {
     "category":"History4",
-    "roundNo":4,
+    "roundNo":"4",
+    "roundName":"General",
     "question":"What is your country name?4",
-    "options":[{
-        "value":"Nepal4",
+    "optione":[{
+        "val":"Nepal4",
         "isCorrect":true
     },
     {
-        "value":"India4",
+        "val":"India4",
         "isCorrect":false
     },
     {
-        "value":"China4",
+        "val":"China4",
         "isCorrect":false
     },
     {
-        "value":"Philipines4",
+        "val":"Philipines4",
         "isCorrect":false
     }
 ]
 },
 {
     "category":"History5",
-    "roundNo":4,
+    "roundNo":"5",
+    "roundName":"General",
     "question":"What is your country name?5",
-    "options":[{
-        "value":"Nepal5",
+    "optione":[{
+        "val":"Nepal5",
         "isCorrect":true
     },
     {
-        "value":"India5",
+        "val":"India5",
         "isCorrect":false
     },
     {
-        "value":"China5",
+        "val":"China5",
         "isCorrect":false
     },
     {
-        "value":"Philipines5",
+        "val":"Philipines5",
         "isCorrect":false
     }
 ]
 },
 {
     "category":"History6",
-    "roundNo":4,
+    "roundNo":"6",
+    "roundName":"General",
     "question":"What is your country name?6",
-    "options":[{
-        "value":"Nepal6",
+    "optione":[{
+        "val":"Nepal6",
         "isCorrect":true
     },
     {
-        "value":"India6",
+        "val":"India6",
         "isCorrect":false
     },
     {
-        "value":"China6",
+        "val":"China6",
         "isCorrect":false
     },
     {
-        "value":"Philipines6",
+        "val":"Philipines6",
         "isCorrect":false
     }
 ]

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from "react";
+import { Quiz1Context } from "../context/Quiz1Context";
 
-export default function dashboard() {
-    var no = 5;
-    var roundName="General"
-    return (
-        <div>
-            <p>{`${no} rounds remaining of ${roundName}`}</p>
-        </div>
-    )
+export default function Dashboard(props) {
+  const { dNumber, dCategory } = useContext(Quiz1Context);
+  const [dashNo, setDashNo] = dNumber;
+  const [dashCategory, setDashCategory] = dCategory;
+  
+  return (
+    <div>
+      <p>{`${dashNo} rounds remaining of ${dashCategory}`}</p>
+    </div>
+  );
 }
