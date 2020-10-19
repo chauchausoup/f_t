@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState,useContext, useEffect } from "react";
 import Authen from "./Authen";
 import {LastOptionContext} from '../context/LastOptionContext';
 
@@ -19,6 +19,7 @@ let socket = io(ENDPOINT);
 
 export default function AppOptions() {
 
+  const [input,setInput]=useState(0);
 
   const [input1, setInput1] = useState(1);
   const [input2, setInput2] = useState(2);
@@ -53,6 +54,21 @@ export default function AppOptions() {
     socket.emit("answer", JSON.stringify(aValue));
   };
 
+  useEffect(()=>{
+    const handleClick=(e)=>{
+      e.preventDefault();
+      setInput(e.target.innerHTML,()=>{
+        console.log(input)
+        aValue["answer"]=input;
+        socket.emit("answer",JSON.stringify(aValue))
+      })
+     
+    }
+    return handleClick;
+  },[input])
+ 
+
+
   const handle2 = (e) => {
     e.preventDefault();
     setInput2(2);
@@ -81,11 +97,11 @@ export default function AppOptions() {
       <Authen className="authenButton" />
 
       <hr />
-      <button onClick={handle1} value={input1}>
+      <button onClick={handleClick} value={input1} >
         1
       </button>
       <br />
-      <button onClick={handle2} value={input2}>
+      <button onClick={handleClick} value={input2}>
         2
       </button>
       <br />
