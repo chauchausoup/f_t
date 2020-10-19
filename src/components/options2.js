@@ -2,20 +2,19 @@ import React, { useState, useEffect, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import io from "socket.io-client";
 import "../index.css";
-import { Quiz1Context } from "../context/Quiz1Context";
+import { Quiz2Context } from "../context/Quiz2Context";
 import {data2} from '../data/quiz2'
-
 
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
 
 
-export default function Options(props) {
+export default function Options() {
 /*     const { optionArray} = useContext(Quiz1Context);
     const [optioni,setOptions] = optionArray; */
-    const { colorize} = useContext(Quiz1Context);
-    const [colorCorrect,setColorCorrect] = colorize;
+    const { colorize2} = useContext(Quiz2Context);
+    const [colorCorrect2,setColorCorrect2] = colorize2;
     
   const [answerOption1, setAnswerOption1] = useState([]);
   const [answerOption2, setAnswerOption2] = useState([]);
@@ -29,7 +28,7 @@ export default function Options(props) {
       setAnswer(() => JSON.parse(input));
     });
     console.log(aValue);
-    console.log(props.mode)
+
   }, []);
 
   useEffect(() => {
@@ -54,9 +53,9 @@ export default function Options(props) {
 
   return (
     <div>
-      <ol>
-        <li key={1} className={colorCorrect && true ? "optionBoxGood" :"optionBox"} >
-          <p>option 1</p>
+      <ol className="optionSecond">
+        <li key={1} className={colorCorrect2 && true ? "optionBox2Good2" :"optionBox2"} >
+          <p>option one</p>
           <ul className="optionUsers">
             {answerOption1.map((item, index) => (
               <li key={uuidv4()}>
@@ -69,9 +68,9 @@ export default function Options(props) {
             ))}
           </ul>
         </li>
-        <li key={2} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+        <li key={2} className={colorCorrect2 && false ? "optionBox2Good2" :"optionBox2"} >
           <div>
-            <p>option 2</p>
+            <p>option two</p>
             <ul className="optionUsers">
               {answerOption2.map((item, index) => (
                 <li key={uuidv4()}>
@@ -85,8 +84,8 @@ export default function Options(props) {
             </ul>
           </div>
         </li>
-        <li key={3} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
-          <p>option 3</p>
+        <li key={3} className={colorCorrect2 && false ? "optionBox2Good2" :"optionBox2"} >
+          <p>option three</p>
           <ul className="optionUsers">
             {answerOption3.map((item, index) => (
               <li key={uuidv4()}>
@@ -99,8 +98,8 @@ export default function Options(props) {
             ))}
           </ul>
         </li>
-        <li key={4} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
-          <p>option 4</p>
+        <li key={4} className={colorCorrect2 && false ? "optionBox2Good2" :"optionBox2"} >
+          <p>option four</p>
           <ul className="optionUsers">
             {answerOption4.map((item, index) => (
               <li key={uuidv4()}>
@@ -118,17 +117,3 @@ export default function Options(props) {
   );
 }
 
-/* 
-
-lastInput printing once said go
-
-with every go there will be scoring push to the backend
-once we get the score from backend we will update it in the ui
-
-what we get from backend 
-
-    individual round scores
-    wedge score
-
-
-*/

@@ -95,6 +95,7 @@ margin:10px;
   height:50px;
   border: 2px solid black;
   border-radius: 1%;
+  
 }
 
 .optionBoxGood{
@@ -102,6 +103,31 @@ margin:10px;
   padding-bottom: 20px;
   padding-left: 40px;
   width: 400px;
+  height:50px;
+  border: 5px solid green;
+  border-radius: 1%;
+}
+
+
+.optionSecond{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.optionBox2{
+  margin:10px;
+  padding:10px;
+  width: 100px;
+  height:50px;
+  border: 2px solid black;
+  border-radius: 1%;
+}
+
+.optionBox2Good2{
+  margin:10px;
+  padding:10px;
+  width: 100px;
   height:50px;
   border: 5px solid green;
   border-radius: 1%;

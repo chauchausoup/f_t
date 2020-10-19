@@ -18,25 +18,27 @@ function App() {
   return (
     <LoginProvider>
     <LastOptionProvider>
+    <GameModeProvider>
+
     <Quiz1Provider>
     <Quiz2Provider>
-    <GameModeProvider>
     <Router>
 
             <Switch>
             <Route exact path="/"><TriviaQuiz/></Route>
-            <Route path="/triviaQuiz"><QuizScreen mode={1}/></Route>
-            <Route path="/triviaQuiz2"><QuizScreen mode={2}/></Route>
-            <Route path="/triviaQuiz3"><QuizScreen mode={3}/></Route>
+            <Route path="/triviaQuiz"><QuizScreen/></Route>
+            <Route path="/triviaQuiz2"><QuizScreen /></Route>
+            <Route path="/triviaQuiz3"><QuizScreen /></Route>
             <Route path="/triviaQuizApp"><TriviaQuizApp/></Route>
             <Route path="/triviaQuizApp2"><TriviaQuizApp2/></Route>
             <Route path="/triviaQuizApp3"><TriviaQuizApp3/></Route>
 
             </Switch>
     </Router>
-    </GameModeProvider>
     </Quiz2Provider>
     </Quiz1Provider>
+    </GameModeProvider>
+
     </LastOptionProvider>
     </LoginProvider>
 

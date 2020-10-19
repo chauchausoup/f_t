@@ -2,8 +2,8 @@ export const data2 =[{
     "category":"History",
     "roundNo":"1",
     "roundName":"General",
-    "question":"What is your country name?",
-    "optione":[{
+    "question":"What is your country name?1",
+    optione:[{
         "val":"Nepal",
         "isCorrect":true
     },

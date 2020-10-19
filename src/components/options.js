@@ -8,7 +8,7 @@ import { Quiz1Context } from "../context/Quiz1Context";
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
-export default function Options(props) {
+export default function Options() {
 /*     const { optionArray} = useContext(Quiz1Context);
     const [optioni,setOptions] = optionArray; */
     const { colorize} = useContext(Quiz1Context);
@@ -26,7 +26,6 @@ export default function Options(props) {
       setAnswer(() => JSON.parse(input));
     });
     console.log(aValue);
-    console.log(props.mode)
   }, []);
 
   useEffect(() => {

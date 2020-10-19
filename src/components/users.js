@@ -20,7 +20,7 @@ var styleProgress={
     "height":"100px"
 }
 
-function Users(props){
+function Users(){
     const [scoreK,setScoreK]=useState(0);
     const [scoreN,setScoreN]=useState(0);
     const [scoreS,setScoreS]=useState(0);
@@ -28,7 +28,7 @@ function Users(props){
     const [lastInput, setLastInput] = useContext(LastOptionContext);
 
     useEffect(() => {
-      console.log(props.mode)
+      
         socket.on("scoreAns", (lastScore) => {
           switch(lastScore.giveName){
             case "Krishna":

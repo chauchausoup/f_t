@@ -1,4 +1,4 @@
-import React, { useState, createContext,useEffect } from "react";
+import React, { useState, createContext,useEffect, useContext } from "react";
 
 import uuid from "uuid";
 import {GameModeContext} from '../context/GameModeContext';
@@ -16,13 +16,13 @@ export const Quiz1Provider = (props) => {
   const [dashCategory, setDashCategory] = useState("");
   const [quiz1Over,setQuiz1Over]=useState(false)
   const [colorCorrect,setColorCorrect]=useState(false);
-  const [gameMode,setGameMode]=useState(GameModeContext)
+  const [gameMode,setGameMode]=useContext(GameModeContext)
 
   //const [optioni, setOptions] = useState([]);
 
   //we need something to map our array of object that
-  var interval1 = 5000; 
-  var interval2=5000;
+  var interval1 = 1000; 
+  var interval2=1000;
     var counter1=0;
 
   //deplay our array iteration
@@ -31,7 +31,8 @@ export const Quiz1Provider = (props) => {
     setColorCorrect(false)
     if (arr.length === 0) {
       setQuiz1Over(true);
-      setGameMode(2)
+      setGameMode("2")
+      console.log(`Game Mode is : ${gameMode}`)
       return;
     }
     //console.log(arr[0]);
@@ -63,13 +64,13 @@ export const Quiz1Provider = (props) => {
 
   useEffect(()=>{ 
     slowIterateQuestions(quizOnes)
-    
+
   },[])
   useEffect(()=>{ 
     slowIterateAnswers(quizOnes)
     
   },[])
-  
+
 
   return (
     <Quiz1Context.Provider
@@ -79,7 +80,6 @@ export const Quiz1Provider = (props) => {
         dCategory: [dashCategory, setDashCategory],
         quiz1State:[quiz1Over,setQuiz1Over],
         colorize:[colorCorrect,setColorCorrect]
-        
       }}
     >
       {props.children}
