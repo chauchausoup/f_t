@@ -3,10 +3,13 @@ import { v4 as uuidv4 } from "uuid";
 import io from "socket.io-client";
 import "../index.css";
 import { Quiz1Context } from "../context/Quiz1Context";
+import {data2} from '../data/quiz2'
 
 
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
+
+
 
 export default function Options(props) {
 /*     const { optionArray} = useContext(Quiz1Context);

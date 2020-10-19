@@ -24,7 +24,19 @@ export default function AppOptions() {
   const [input2, setInput2] = useState(2);
   const [input3, setInput3] = useState(3);
   const [input4, setInput4] = useState(4);
-  const [lastInput, setLastInput] = useContext(LastOptionContext);
+  const [input5, setInput5] = useState(5);
+  const [input6, setInput6] = useState(6);
+  const [input7, setInput7] = useState(7);
+  const [input8, setInput8] = useState(8);
+  const [input9, setInput9] = useState(9);
+  const [input10, setInput10] = useState(10);
+  const [input11, setInput11] = useState(11);
+  const [input12, setInput12] = useState(12);
+  const [input13, setInput13] = useState(13);
+  const [input14, setInput14] = useState(14);
+  const [input15, setInput15] = useState(15);
+  const [input16, setInput16] = useState(16);
+  
   
 
 
@@ -33,17 +45,10 @@ export default function AppOptions() {
     answer: 0,
   };
 
-  const handleInputSubmission = () => {
-    aValue["answer"] = lastInput;
-    console.log(lastInput)
-    socket.emit("lastAnswer", JSON.stringify(aValue));
-  };
-
   const handle1 = (e) => {
     e.preventDefault();
     setInput1(1);
     console.log(e.target.value);
-    setLastInput(e.target.value);
     aValue["answer"] = input1;
     socket.emit("answer", JSON.stringify(aValue));
   };
@@ -52,7 +57,6 @@ export default function AppOptions() {
     e.preventDefault();
     setInput2(2);
     console.log(e.target.value);
-    setLastInput(e.target.value);
     aValue["answer"] = input2;
     socket.emit("answer", JSON.stringify(aValue));
   };
@@ -61,7 +65,6 @@ export default function AppOptions() {
     e.preventDefault();
     setInput3(3);
     console.log(e.target.value);
-    setLastInput(e.target.value);
     aValue["answer"] = input3;
     socket.emit("answer", JSON.stringify(aValue));
   };
@@ -69,7 +72,6 @@ export default function AppOptions() {
     e.preventDefault();
     setInput4(4);
     console.log(e.target.value);
-    setLastInput(e.target.value);
     aValue["answer"] = input4;
     socket.emit("answer", JSON.stringify(aValue));
   };
@@ -95,11 +97,56 @@ export default function AppOptions() {
         4
       </button>
       <br />
+      <button onClick={handle1} value={input5}>
+        5
+      </button>
+      <br />
+      <button onClick={handle2} value={input6}>
+        6
+      </button>
+      <br />
+      <button onClick={handle3} value={input7}>
+        7
+      </button>
+      <br />
+      <button onClick={handle4} value={input8}>
+        8
+      </button>
+      <br />
+      <button onClick={handle1} value={input9}>
+        9
+      </button>
+      <br />
+      <button onClick={handle2} value={input10}>
+        10
+      </button>
+      <br />
+      <button onClick={handle3} value={input11}>
+        11
+      </button>
+      <br />
+      <button onClick={handle4} value={input12}>
+        12
+      </button>
+      <br />
+      <button onClick={handle1} value={input13}>
+        13
+      </button>
+      <br />
+      <button onClick={handle2} value={input14}>
+        14
+      </button>
+      <br />
+      <button onClick={handle3} value={input15}>
+        15
+      </button>
+      <br />
+      <button onClick={handle4} value={input16}>
+        16
+      </button>
+      <br />
       <hr />
-      <button onClick={handleInputSubmission}>Go</button>
+      
     </div>
   );
 }
-
-
-

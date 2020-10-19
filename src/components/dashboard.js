@@ -9,6 +9,7 @@ export default function Dashboard(props) {
   return (
     <div>
       <p>{`${dashNo} rounds remaining of ${dashCategory}`}</p>
+      <p>{`Game Mode: ${props.mode}`}</p>
     </div>
   );
 }
