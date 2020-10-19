@@ -86,3 +86,23 @@ margin:10px;
  padding-left: 200px;
  padding-right: 200px;
 }
+
+.optionBox{
+  margin-bottom:20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  width: 400px;
+  height:50px;
+  border: 2px solid black;
+  border-radius: 1%;
+}
+
+.optionBoxGood{
+  margin-bottom:20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  width: 400px;
+  height:50px;
+  border: 5px solid green;
+  border-radius: 1%;
+}

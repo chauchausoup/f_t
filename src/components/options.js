@@ -9,8 +9,10 @@ const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
 export default function Options() {
-    const { optionArray} = useContext(Quiz1Context);
-    const [optioni,setOptions] = optionArray;
+/*     const { optionArray} = useContext(Quiz1Context);
+    const [optioni,setOptions] = optionArray; */
+    const { colorize} = useContext(Quiz1Context);
+    const [colorCorrect,setColorCorrect] = colorize;
     
   const [answerOption1, setAnswerOption1] = useState([]);
   const [answerOption2, setAnswerOption2] = useState([]);
@@ -25,7 +27,6 @@ export default function Options() {
     });
     console.log(aValue);
 
-    console.log(optioni)
   }, []);
 
   useEffect(() => {
@@ -51,8 +52,8 @@ export default function Options() {
   return (
     <div>
       <ol>
-        <li key={1}>
-          <p>{(optioni[0])["val"]}</p>
+        <li key={1} className={colorCorrect && true ? "optionBoxGood" :"optionBox"} >
+          <p>option 1</p>
           <ul className="optionUsers">
             {answerOption1.map((item, index) => (
               <li key={uuidv4()}>
@@ -65,9 +66,9 @@ export default function Options() {
             ))}
           </ul>
         </li>
-        <li key={2}>
+        <li key={2} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
           <div>
-            <p>{(optioni[1])["val"]}</p>
+            <p>option 2</p>
             <ul className="optionUsers">
               {answerOption2.map((item, index) => (
                 <li key={uuidv4()}>
@@ -81,8 +82,8 @@ export default function Options() {
             </ul>
           </div>
         </li>
-        <li key={3}>
-          <p>{(optioni[2])["val"]}</p>
+        <li key={3} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+          <p>option 3</p>
           <ul className="optionUsers">
             {answerOption3.map((item, index) => (
               <li key={uuidv4()}>
@@ -95,8 +96,8 @@ export default function Options() {
             ))}
           </ul>
         </li>
-        <li key={4}>
-          <p>{(optioni[3])["val"]}</p>
+        <li key={4} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+          <p>option 4</p>
           <ul className="optionUsers">
             {answerOption4.map((item, index) => (
               <li key={uuidv4()}>
