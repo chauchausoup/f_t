@@ -41,8 +41,7 @@ export const Quiz2Provider = (props) => {
   const [go2,setGo2]=useState(true)
 
   //we need something to map our array of object that
-  var interval1 = 5000;
-  var interval2 = 5000;
+  var interval1 = 2000;
   var counter1 = 0;
 
   //deplay our array iteration
@@ -67,10 +66,14 @@ export const Quiz2Provider = (props) => {
   }
 
  useEffect(() => {
-      if(gameMode== "2" && go2){
+  console.log("is it initial?")
+
+      if((gameMode === "2") && go2){
+
         slowIterateQuestions(data2);
       }
-    }, [gameMode]); 
+      return;
+    }, []); 
 
   return (
     <Quiz2Context.Provider
@@ -79,7 +82,8 @@ export const Quiz2Provider = (props) => {
         dNumber2: [dashNo2, setDashNo2],
         dCategory2: [dashCategory2, setDashCategory2],
         colorize2: [colorCorrect2, setColorCorrect2],
-        options2:[optioni2,setOptions2]
+        options2:[optioni2,setOptions2],
+        go2Flag:[go2,setGo2]
       }}
     >
       {props.children}

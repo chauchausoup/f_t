@@ -3,23 +3,29 @@ import { v4 as uuidv4 } from "uuid";
 import io from "socket.io-client";
 import "../index.css";
 import { Quiz1Context } from "../context/Quiz1Context";
-
+import {Option1Context} from "../context/Option1Context";
 
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
 export default function Options() {
-/*     const { optionArray} = useContext(Quiz1Context);
-    const [optioni,setOptions] = optionArray; */
+
 
     const { colorize,options} = useContext(Quiz1Context);
     const [colorCorrect,setColorCorrect] = colorize;
     const [optioni,setOptions] = options;
+
+    const {op1,op2,op3,op4} = useContext(Option1Context)
+
+      const [answerOption1, setAnswerOption1]=op1
+      const [answerOption2, setAnswerOption2]=op2
+      const [answerOption3, setAnswerOption3]=op3
+      const [answerOption4, setAnswerOption4]=op4
     
-  const [answerOption1, setAnswerOption1] = useState([]);
+ /*  const [answerOption1, setAnswerOption1] = useState([]);
   const [answerOption2, setAnswerOption2] = useState([]);
   const [answerOption3, setAnswerOption3] = useState([]);
-  const [answerOption4, setAnswerOption4] = useState([]);
+  const [answerOption4, setAnswerOption4] = useState([]); */
 
   var [aValue, setAnswer] = useState({ personalInfo: {}, answer: 0 });
 
@@ -116,17 +122,3 @@ export default function Options() {
   );
 }
 
-/* 
-
-lastInput printing once said go
-
-with every go there will be scoring push to the backend
-once we get the score from backend we will update it in the ui
-
-what we get from backend 
-
-    individual round scores
-    wedge score
-
-
-*/

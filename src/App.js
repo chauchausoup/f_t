@@ -26,12 +26,14 @@ import { Quiz1Provider } from './context/Quiz1Context';
 import { GameModeProvider } from './context/GameModeContext';
 import { Quiz2Provider } from './context/Quiz2Context';
 import { Quiz3Provider } from './context/Quiz3Context';
+import { Option1Provider } from './context/Option1Context';
 
 function App() {
 
   return (
     <LoginProvider>
     <LastOptionProvider>
+    <Option1Provider>
     <GameModeProvider>
     <Quiz1Provider>
     <Quiz2Provider>
@@ -56,7 +58,7 @@ function App() {
     </Quiz2Provider>
     </Quiz1Provider>
     </GameModeProvider>
-
+    </Option1Provider>
     </LastOptionProvider>
     </LoginProvider>
 

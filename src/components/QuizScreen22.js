@@ -14,15 +14,13 @@ export default function QuizScreen22(){
   useEffect(()=>{
       switch(gameMode){
   
-          case "2":
-             // window.history.replaceState(null, "New Page Title", "/triviaQuiz2");
-             // window.location.reload()
-              break;
           case "3":
 
             window.history.replaceState(null, "New Page Title", "/triviaQuiz3");
             window.location.reload()
             break;
+           
+              
       }
   
   },[gameMode])
