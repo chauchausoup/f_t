@@ -25,19 +25,9 @@ export const Quiz1Provider = (props) => {
     { val: "", isCorrect: false },
     { val: "", isCorrect: false },
   ]);
+  const [go1,setGo1]=useState(true)
 
-  //const [optioni, setOptions] = useState([]);
 
-  /* 
-  function historyChange(){
-
-    setTimeout(() => {
-      history.push(`/triviaQuiz2`)
-    }, 2500);
-   
-  } */
-
-  //we need something to map our array of object that
   var interval1 = 1000;
   var interval2 = 1000;
   var counter1 = 0;
@@ -48,11 +38,8 @@ export const Quiz1Provider = (props) => {
     setColorCorrect(false);
     if (arr.length === 0) {
       setQuiz1Over(true);
-      setGameMode(2);
-
-      window.history.replaceState(null, "New Page Title", "/triviaQuiz2");
-     // window.location.reload()
-
+      setGameMode("2");
+      setGo1(false)
       console.log(`Game Mode is : ${gameMode}`);
       return;
     }
@@ -69,32 +56,11 @@ export const Quiz1Provider = (props) => {
     }, interval1);
   }
 
-  function slowIterateAnswers(arr) {
-    if (arr.length === 0) {
-      return;
-    }
-
-    setColorCorrect(true);
-    setTimeout(() => {
-      slowIterateAnswers(arr.slice(1));
-    }, interval2);
-  }
-
   useEffect(() => {
+    if(gameMode== "1" && go1)
     slowIterateQuestions(quizOnes);
-  }, []);
+  }, [gameMode]);
 
-  useEffect(() => {
-    slowIterateAnswers(quizOnes);
-  }, []);
-
-  /*  useEffect(() => {
-    setTimeout(() => {
-      history.push(`/triviaQuiz2`)
-    }, 2500);
-  }, [quiz1Over]);
-
- */
 
   return (
     <Quiz1Context.Provider

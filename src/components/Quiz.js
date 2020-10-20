@@ -1,16 +1,24 @@
-import React from 'react'
+import React,{useState,useContext, useEffect} from 'react'
 import { useHistory} from 'react-router-dom'
 //import QuizScreen from './QuizScreen'
 import '../index.css'
 
+
+import {GameModeContext} from '../context/GameModeContext';
+
+
 export default function Quiz() {
+
     let history = useHistory();
 
     const handleQuizButton=()=>{
         history.push(`/triviaQuiz`)
+        window.location.reload()
     }
     const handleQuizButton2=()=>{
         history.push(`/triviaQuiz2`)
+        window.location.reload()
+
     }
     const handleQuizButton3=()=>{
         history.push(`/triviaQuiz3`)

@@ -25,6 +25,7 @@ function Quiz2Home() {
 
   function buttonHandler() {
     history.push(`/triviaQuiz2/2/`)
+    window.location.reload()
   }
 
   return (

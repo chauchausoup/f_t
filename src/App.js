@@ -16,11 +16,16 @@ import TriviaQuizApp from './components/appOptions'
 import TriviaQuizApp2 from './components/appOption2'
 import TriviaQuizApp3 from './components/appOption3'
 
+import Results from './components/Results'
+
+
+
 import {LoginProvider} from './context/LoginContext'
 import {LastOptionProvider} from './context/LastOptionContext'
 import { Quiz1Provider } from './context/Quiz1Context';
 import { GameModeProvider } from './context/GameModeContext';
 import { Quiz2Provider } from './context/Quiz2Context';
+import { Quiz3Provider } from './context/Quiz3Context';
 
 function App() {
 
@@ -30,6 +35,7 @@ function App() {
     <GameModeProvider>
     <Quiz1Provider>
     <Quiz2Provider>
+    <Quiz3Provider>
     <Router>
 
             <Switch>
@@ -42,9 +48,11 @@ function App() {
             <Route path="/triviaQuizApp"><TriviaQuizApp/></Route>
             <Route path="/triviaQuizApp2"><TriviaQuizApp2/></Route>
             <Route path="/triviaQuizApp3"><TriviaQuizApp3/></Route>
+            <Route path="/results"><Results/></Route>
 
             </Switch>
     </Router>
+    </Quiz3Provider>
     </Quiz2Provider>
     </Quiz1Provider>
     </GameModeProvider>

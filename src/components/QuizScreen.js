@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import Dashboard from './dashboard';
 import Questions from './questions';
 import Options from './options';
@@ -9,6 +9,20 @@ import {GameModeContext} from '../context/GameModeContext';
 export default function QuizScreen() {
     const [gameMode,setGameMode]=useContext(GameModeContext);
 
+    useEffect(()=>{
+        switch(gameMode){
+    
+            case "2":
+                window.history.replaceState(null, "New Page Title", "/triviaQuiz2");
+                window.location.reload()
+                break;
+            case "3":
+                break;
+        }
+    
+    },[gameMode])
+       
+
     return (
        <div className="quizScreenf">
        <h1>Trivia Quiz Screen</h1>
@@ -16,9 +30,9 @@ export default function QuizScreen() {
            
             <Dashboard/>
             <hr/>
-            {(gameMode == 1)? <Questions/> :null}
+            {<Questions/>}
             <hr/>
-           {(gameMode == 1)? <Options/> :null}
+           { <Options/>}
             <hr/>
             <Users/> 
        

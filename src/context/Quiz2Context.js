@@ -38,6 +38,7 @@ export const Quiz2Provider = (props) => {
     { val: "", isCorrect: false },
     { val: "", isCorrect: false },
   ]);
+  const [go2,setGo2]=useState(true)
 
   //we need something to map our array of object that
   var interval1 = 5000;
@@ -49,13 +50,11 @@ export const Quiz2Provider = (props) => {
   function slowIterateQuestions(arr) {
     setColorCorrect2(false);
     if (arr.length === 0) {
-      
-      setGameMode(3);
-
-      window.history.replaceState(null, "New Page Title", "/triviaQuiz3");
+      setGameMode("3");
+      setGo2(false)
       return;
     }
-    // <-- replace with your custom code
+
     counter1++;
     setDashNo2(qLength - counter1);
     setDashCategory2(arr[0].category);
@@ -67,26 +66,11 @@ export const Quiz2Provider = (props) => {
     }, interval1);
   }
 
-  function slowIterateAnswers(arr) {
-    if (arr.length === 0) {
-      return;
-    }
-    setColorCorrect2(true);
-    setTimeout(() => {
-      slowIterateAnswers(arr.slice(1));
-    }, interval2);
-  }
-
-    useEffect(() => {
-      slowIterateQuestions(data2);
-    }, []);
-    useEffect(() => {
-      slowIterateAnswers(data2);
-    }, []);
-
- /*    useEffect(() => {
-      console.log(optioni2);
-    }, [optioni2]); */
+ useEffect(() => {
+      if(gameMode== "2" && go2){
+        slowIterateQuestions(data2);
+      }
+    }, [gameMode]); 
 
   return (
     <Quiz2Context.Provider
