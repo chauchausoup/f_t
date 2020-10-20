@@ -133,6 +133,10 @@ export const data2 =[{
     {
         "val":"China3",
         "isCorrect":false
+    },
+    {
+        "val":"China2",
+        "isCorrect":false
     }
 ]
 },

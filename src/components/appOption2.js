@@ -19,9 +19,11 @@ let socket = io(ENDPOINT);
 
 export default function AppOptions() {
 
-  const [input,setInput]=useState(0);
+  const [input,setInput]=useState({
+    "b1":"",
+  });
 
-  const [input1, setInput1] = useState(1);
+ /*  const [input1, setInput1] = useState(1);
   const [input2, setInput2] = useState(2);
   const [input3, setInput3] = useState(3);
   const [input4, setInput4] = useState(4);
@@ -36,7 +38,7 @@ export default function AppOptions() {
   const [input13, setInput13] = useState(13);
   const [input14, setInput14] = useState(14);
   const [input15, setInput15] = useState(15);
-  const [input16, setInput16] = useState(16);
+  const [input16, setInput16] = useState(16); */
   
   
 
@@ -46,30 +48,37 @@ export default function AppOptions() {
     answer: 0,
   };
 
-  const handle1 = (e) => {
+/*   const handle1 = (e) => {
     e.preventDefault();
     setInput1(1);
     console.log(e.target.value);
     aValue["answer"] = input1;
     socket.emit("answer", JSON.stringify(aValue));
   };
+ */
+
+
+  const handleClick=(e)=>{
+    e.preventDefault();
+    e.persist()
+   // console.log(e.target.name)
+     setInput((prevState)=>({
+     ...prevState,
+     [e.target.name]:e.target.value
+   }))
+
+ 
+  }
+
 
   useEffect(()=>{
-    const handleClick=(e)=>{
-      e.preventDefault();
-      setInput(e.target.innerHTML,()=>{
-        console.log(input)
-        aValue["answer"]=input;
-        socket.emit("answer",JSON.stringify(aValue))
-      })
-     
-    }
-    return handleClick;
+    console.log(input)
+    aValue["answer"]=input;
+    socket.emit("answer",JSON.stringify(aValue))
   },[input])
- 
 
 
-  const handle2 = (e) => {
+/*   const handle2 = (e) => {
     e.preventDefault();
     setInput2(2);
     console.log(e.target.value);
@@ -90,18 +99,30 @@ export default function AppOptions() {
     console.log(e.target.value);
     aValue["answer"] = input4;
     socket.emit("answer", JSON.stringify(aValue));
-  };
+  }; */
 
   return (
     <div>
       <Authen className="authenButton" />
 
       <hr />
-      <button onClick={handleClick} value={input1} >
+      <button onClick={handleClick} value="1" name="b1">
         1
       </button>
       <br />
-      <button onClick={handleClick} value={input2}>
+      <button onClick={handleClick} value="2" name="b2">
+        2
+      </button>
+      <br />
+      <button onClick={handleClick} value="3" name="b3">
+        3
+      </button>
+      <br />
+      <button onClick={handleClick} value="4" name="b4">
+        4
+      </button>
+      <br />
+      {/* <button onClick={handleClick} value={input2}>
         2
       </button>
       <br />
@@ -159,7 +180,7 @@ export default function AppOptions() {
       <br />
       <button onClick={handle4} value={input16}>
         16
-      </button>
+      </button> */}
       <br />
       <hr />
       

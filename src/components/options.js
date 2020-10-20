@@ -11,8 +11,10 @@ let socket = io(ENDPOINT);
 export default function Options() {
 /*     const { optionArray} = useContext(Quiz1Context);
     const [optioni,setOptions] = optionArray; */
-    const { colorize} = useContext(Quiz1Context);
+
+    const { colorize,options} = useContext(Quiz1Context);
     const [colorCorrect,setColorCorrect] = colorize;
+    const [optioni,setOptions] = options;
     
   const [answerOption1, setAnswerOption1] = useState([]);
   const [answerOption2, setAnswerOption2] = useState([]);
@@ -52,7 +54,7 @@ export default function Options() {
     <div>
       <ol>
         <li key={1} className={colorCorrect && true ? "optionBoxGood" :"optionBox"} >
-          <p>option 1</p>
+          <p>{optioni[0].val}</p>
           <ul className="optionUsers">
             {answerOption1.map((item, index) => (
               <li key={uuidv4()}>
@@ -67,7 +69,7 @@ export default function Options() {
         </li>
         <li key={2} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
           <div>
-            <p>option 2</p>
+            <p>{optioni[1].val}</p>
             <ul className="optionUsers">
               {answerOption2.map((item, index) => (
                 <li key={uuidv4()}>
@@ -82,7 +84,7 @@ export default function Options() {
           </div>
         </li>
         <li key={3} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
-          <p>option 3</p>
+          <p>{optioni[2].val}</p>
           <ul className="optionUsers">
             {answerOption3.map((item, index) => (
               <li key={uuidv4()}>
@@ -96,7 +98,7 @@ export default function Options() {
           </ul>
         </li>
         <li key={4} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
-          <p>option 4</p>
+          <p>{optioni[3].val}</p>
           <ul className="optionUsers">
             {answerOption4.map((item, index) => (
               <li key={uuidv4()}>
