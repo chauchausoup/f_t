@@ -10,7 +10,7 @@ let socket = io(ENDPOINT);
 
 
 
-export default function Options() {
+export default function Options2() {
 /*     const { optionArray} = useContext(Quiz1Context);
     const [optioni,setOptions] = optionArray; */
     const { colorize2,options2} = useContext(Quiz2Context);

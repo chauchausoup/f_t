@@ -16,9 +16,9 @@ export default function QuizScreen() {
            
             <Dashboard/>
             <hr/>
-            {(gameMode == "1")? <Questions/> :null}
+            {(gameMode == 1)? <Questions/> :null}
             <hr/>
-           {(gameMode == "1")? <Options/> :null}
+           {(gameMode == 1)? <Options/> :null}
             <hr/>
             <Users/> 
        

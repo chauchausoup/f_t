@@ -1,43 +1,36 @@
-import React, { useContext, useState } from 'react'
-import Dashboard from './dashboard';
-import Questions from './questions';
-import Questions2 from './questions2'
-import Options from './options';
-import Options2 from './options2';
-
-import Users from './users';
-import {GameModeContext} from '../context/GameModeContext';
+import React, { useContext, useState } from "react";
+import { BrowserRouter as Router, Route, useHistory,Switch } from "react-router-dom";
+import QuizScreen22 from './QuizScreen22';
 
 export default function QuizScreen() {
-
-
-    const [gameMode,setGameMode]=useContext(GameModeContext);
-    const[quiz2,setQuiz2]=useState(false)
-
-    function buttonHandler(){
-        setQuiz2(true)
-    };
-
-    return (
-       <div className="quizScreenf">
-       <h1>Trivia Quiz 2 Screen</h1>
-
-       <button onClick={buttonHandler}>Go</button>
-            <hr/>
-           {quiz2 && <>
-            <Dashboard/>
-            <hr/>
-            {(gameMode == "2")? <Questions2/> :<Questions/>}
-            <hr/>
-           {(gameMode == "2")? <Options2/> :<Options/>}
-            <hr/>
-            <Users/> 
-          </> }
-       </div>
-       
-    )
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/triviaQuiz2">
+            <Quiz2Home />
+          </Route>
+          <Route exact path="/triviaQuiz2/2/">
+            <QuizScreen22 />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
+function Quiz2Home() {
+    let history=useHistory()
+  
 
+  function buttonHandler() {
+    history.push(`/triviaQuiz2/2/`)
+  }
 
-
+  return (
+    <div className="quizScreenf">
+      <h1>Trivia Quiz 2 Screen</h1>
+      <button onClick={buttonHandler}>Go</button>
+    </div>
+  );
+}

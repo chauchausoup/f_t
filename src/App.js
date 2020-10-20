@@ -5,7 +5,12 @@ import './App.css';
 import TriviaQuiz from './components/Quiz'
 import QuizScreen from './components/QuizScreen'
 import QuizScreen2 from './components/QuizScreen2'
+import QuizScreen22 from './components/QuizScreen22';
+
+
 import QuizScreen3 from './components/QuizScreen3'
+import QuizScreen33 from './components/QuizScreen33';
+
 
 import TriviaQuizApp from './components/appOptions'
 import TriviaQuizApp2 from './components/appOption2'
@@ -31,7 +36,9 @@ function App() {
             <Route exact path="/"><TriviaQuiz/></Route>
             <Route path="/triviaQuiz"><QuizScreen/></Route>
             <Route path="/triviaQuiz2"><QuizScreen2 /></Route>
+            <Route path="/triviaQuiz2/2"><QuizScreen22 /></Route>
             <Route path="/triviaQuiz3"><QuizScreen3 /></Route>
+            <Route path="/triviaQuiz3/3"><QuizScreen33 /></Route>
             <Route path="/triviaQuizApp"><TriviaQuizApp/></Route>
             <Route path="/triviaQuizApp2"><TriviaQuizApp2/></Route>
             <Route path="/triviaQuizApp3"><TriviaQuizApp3/></Route>

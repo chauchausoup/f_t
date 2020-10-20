@@ -1,34 +1,37 @@
-import React, { useContext } from 'react'
-import Dashboard from './dashboard';
-import Questions from './questions';
-import Questions2 from './questions2'
-import Options from './options';
-import Options2 from './options2';
 
-import Users from './users';
-import {GameModeContext} from '../context/GameModeContext';
+import React, { useContext, useState } from "react";
+import { BrowserRouter as Router, Route, useHistory,Switch } from "react-router-dom";
+import QuizScreen33 from './QuizScreen33';
 
 export default function QuizScreen() {
-    const [gameMode,setGameMode]=useContext(GameModeContext);
-
-    return (
-       <div className="quizScreenf">
-       <h1>Trivia Quiz Screen</h1>
-            <hr/>
-           
-            <Dashboard/>
-            <hr/>
-            {(gameMode == "3")? <Questions/> :<Questions2/>}
-            <hr/>
-           {(gameMode == "3")? <Options/> :<Options2/>}
-            <hr/>
-            <Users/> 
-       
-       </div>
-       
-    )
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/triviaQuiz3">
+            <Quiz3Home />
+          </Route>
+          <Route exact path="/triviaQuiz3/3">
+            <QuizScreen33 />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
+function Quiz3Home() {
+    let history=useHistory()
+  
 
+  function buttonHandler() {
+    history.push(`/triviaQuiz3/3`)
+  }
 
-
+  return (
+    <div className="quizScreenf">
+      <h1>Trivia Quiz 3 Screen</h1>
+      <button onClick={buttonHandler}>Go</button>
+    </div>
+  );
+}

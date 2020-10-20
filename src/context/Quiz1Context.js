@@ -26,12 +26,9 @@ export const Quiz1Provider = (props) => {
     { val: "", isCorrect: false },
   ]);
 
-
   //const [optioni, setOptions] = useState([]);
 
-
-
-/* 
+  /* 
   function historyChange(){
 
     setTimeout(() => {
@@ -47,16 +44,15 @@ export const Quiz1Provider = (props) => {
 
   //deplay our array iteration
 
-
- 
   function slowIterateQuestions(arr) {
     setColorCorrect(false);
     if (arr.length === 0) {
       setQuiz1Over(true);
-      //history.push(`/triviaQuiz2`)
-      window.history.replaceState(null, "New Page Title", "/triviaQuiz2")
-      setGameMode(2)
-     
+      setGameMode(2);
+
+      window.history.replaceState(null, "New Page Title", "/triviaQuiz2");
+     // window.location.reload()
+
       console.log(`Game Mode is : ${gameMode}`);
       return;
     }
@@ -85,7 +81,6 @@ export const Quiz1Provider = (props) => {
   }
 
   useEffect(() => {
-   
     slowIterateQuestions(quizOnes);
   }, []);
 
@@ -93,14 +88,13 @@ export const Quiz1Provider = (props) => {
     slowIterateAnswers(quizOnes);
   }, []);
 
- /*  useEffect(() => {
+  /*  useEffect(() => {
     setTimeout(() => {
       history.push(`/triviaQuiz2`)
     }, 2500);
   }, [quiz1Over]);
 
  */
-
 
   return (
     <Quiz1Context.Provider
@@ -110,7 +104,7 @@ export const Quiz1Provider = (props) => {
         dCategory: [dashCategory, setDashCategory],
         quiz1State: [quiz1Over, setQuiz1Over],
         colorize: [colorCorrect, setColorCorrect],
-        options:[optioni,setOptions]
+        options: [optioni, setOptions],
       }}
     >
       {props.children}

@@ -49,7 +49,10 @@ export const Quiz2Provider = (props) => {
   function slowIterateQuestions(arr) {
     setColorCorrect2(false);
     if (arr.length === 0) {
+      
       setGameMode(3);
+
+      window.history.replaceState(null, "New Page Title", "/triviaQuiz3");
       return;
     }
     // <-- replace with your custom code
