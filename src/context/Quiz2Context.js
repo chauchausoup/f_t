@@ -5,12 +5,12 @@ import { GameModeContext } from "../context/GameModeContext";
 
 //generates random quiz question every 8 seconds
 import { data2 } from "../data/quiz2";
-//import {o2} from '../data/options2'
+
 
 console.log(data2);
 
 var qLength = data2.length;
-console.log(qLength);
+
 
 export const Quiz2Context = createContext();
 
@@ -38,7 +38,7 @@ export const Quiz2Provider = (props) => {
     { val: "", isCorrect: false },
     { val: "", isCorrect: false },
   ]);
-  const [go2,setGo2]=useState(true)
+  const [go2, setGo2] = useState(true);
 
   //we need something to map our array of object that
   var interval1 = 2000;
@@ -50,7 +50,7 @@ export const Quiz2Provider = (props) => {
     setColorCorrect2(false);
     if (arr.length === 0) {
       setGameMode("3");
-      setGo2(false)
+      setGo2(false);
       return;
     }
 
@@ -65,15 +65,14 @@ export const Quiz2Provider = (props) => {
     }, interval1);
   }
 
- useEffect(() => {
-  console.log("is it initial?")
+  useEffect(() => {
+    console.log("is it initial?");
 
-      if((gameMode === "2") && go2){
-
-        slowIterateQuestions(data2);
-      }
-      return;
-    }, []); 
+    if (gameMode === "2" && go2) {
+      slowIterateQuestions(data2);
+    }
+    return;
+  }, []);
 
   return (
     <Quiz2Context.Provider
@@ -82,8 +81,8 @@ export const Quiz2Provider = (props) => {
         dNumber2: [dashNo2, setDashNo2],
         dCategory2: [dashCategory2, setDashCategory2],
         colorize2: [colorCorrect2, setColorCorrect2],
-        options2:[optioni2,setOptions2],
-        go2Flag:[go2,setGo2]
+        options2: [optioni2, setOptions2],
+        go2Flag: [go2, setGo2],
       }}
     >
       {props.children}

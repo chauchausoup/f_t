@@ -11,8 +11,7 @@ let socket = io(ENDPOINT);
 
 
 export default function Options2() {
-/*     const { optionArray} = useContext(Quiz1Context);
-    const [optioni,setOptions] = optionArray; */
+
     const { colorize2,options2} = useContext(Quiz2Context);
     const [colorCorrect2,setColorCorrect2] = colorize2;
     const [optioni2,setOptions2]=options2;
@@ -33,7 +32,7 @@ export default function Options2() {
   }, []);
 
   useEffect(() => {
-    console.log(answerOption1);
+    
     switch (aValue.answer) {
       case 1:
         setAnswerOption1([...answerOption1, aValue]);

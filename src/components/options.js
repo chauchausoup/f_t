@@ -8,11 +8,26 @@ import {Option1Context} from "../context/Option1Context";
 const ENDPOINT = "http://localhost:5000";
 let socket = io(ENDPOINT);
 
+
+
+
+function setTimedIntervalColor(callback, delayColors, timout) {
+  var idOptionsColor = window.setTimeout(callback, delayColors);
+
+  window.setTimeout(() => {
+    window.clearTimeout(idOptionsColor);
+    
+  }, timout);
+}
+
+
+
 export default function Options() {
 
 
-    const { colorize,options} = useContext(Quiz1Context);
-    const [colorCorrect,setColorCorrect] = colorize;
+
+
+    const {options,colorize} = useContext(Quiz1Context);
     const [optioni,setOptions] = options;
 
     const {op1,op2,op3,op4} = useContext(Option1Context)
@@ -22,12 +37,25 @@ export default function Options() {
       const [answerOption3, setAnswerOption3]=op3
       const [answerOption4, setAnswerOption4]=op4
     
- /*  const [answerOption1, setAnswerOption1] = useState([]);
-  const [answerOption2, setAnswerOption2] = useState([]);
-  const [answerOption3, setAnswerOption3] = useState([]);
-  const [answerOption4, setAnswerOption4] = useState([]); */
+
+  const [colorCorrect,setColorCorrect] = colorize;
+
 
   var [aValue, setAnswer] = useState({ personalInfo: {}, answer: 0 });
+
+
+   useEffect(() => {
+    console.log(optioni);
+
+    setTimedIntervalColor(
+      () => {
+        setColorCorrect(true);
+        console.log("IN color");
+      },
+      1000,
+      2000
+    );
+  }, [optioni]);
 
   useEffect(() => {
     socket.on("screenAns", (input) => {
@@ -59,7 +87,7 @@ export default function Options() {
   return (
     <div>
       <ol>
-        <li key={1} className={colorCorrect && true ? "optionBoxGood" :"optionBox"} >
+        <li key={1} className={colorCorrect && optioni[0].isCorrect ? "optionBoxGood" :"optionBox"} >
           <p>{optioni[0].val}</p>
           <ul className="optionUsers">
             {answerOption1.map((item, index) => (
@@ -73,7 +101,7 @@ export default function Options() {
             ))}
           </ul>
         </li>
-        <li key={2} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+        <li key={2} className={colorCorrect && optioni[1].isCorrect ? "optionBoxGood" :"optionBox"} >
           <div>
             <p>{optioni[1].val}</p>
             <ul className="optionUsers">
@@ -89,7 +117,7 @@ export default function Options() {
             </ul>
           </div>
         </li>
-        <li key={3} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+        <li key={3} className={colorCorrect && optioni[2].isCorrect ? "optionBoxGood" :"optionBox"} >
           <p>{optioni[2].val}</p>
           <ul className="optionUsers">
             {answerOption3.map((item, index) => (
@@ -103,7 +131,7 @@ export default function Options() {
             ))}
           </ul>
         </li>
-        <li key={4} className={colorCorrect && false ? "optionBoxGood" :"optionBox"} >
+        <li key={4} className={colorCorrect && optioni[3].isCorrect ? "optionBoxGood" :"optionBox"} >
           <p>{optioni[3].val}</p>
           <ul className="optionUsers">
             {answerOption4.map((item, index) => (
