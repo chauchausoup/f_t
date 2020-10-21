@@ -28,6 +28,7 @@ import { Quiz2Provider } from './context/Quiz2Context';
 import { Quiz3Provider } from './context/Quiz3Context';
 import { Option1Provider } from './context/Option1Context';
 
+
 function App() {
 
   return (
@@ -45,12 +46,12 @@ function App() {
             <Route exact path="/triviaQuiz"><QuizScreen/></Route>
             <Route exact path="/triviaQuiz2"><QuizScreen2 /></Route>
             <Route exact path="/triviaQuiz2/2/"><QuizScreen22 /></Route>
-            <Route  exact path="/triviaQuiz3"><QuizScreen3/></Route>
+            <Route exact path="/triviaQuiz3"><QuizScreen3/></Route>
             <Route exact path="/triviaQuiz3/3/"><QuizScreen33 /></Route>
             <Route exact path="/triviaQuizApp"><TriviaQuizApp/></Route>
             <Route exact path="/triviaQuizApp2"><TriviaQuizApp2/></Route>
             <Route exact path="/triviaQuizApp3"><TriviaQuizApp3/></Route>
-            <Route exact path="/results"><Results/></Route>
+            <Route  path="/results"><Results/></Route>
             </Switch>
     </Router>
     </Quiz3Provider>

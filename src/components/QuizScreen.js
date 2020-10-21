@@ -22,7 +22,7 @@ export default function QuizScreen1() {
   useEffect(() => {
     switch (gameMode) {
       case "2":
-          history.push('/triviaQuiz2')
+          history.push(`/triviaQuiz2`)
           break;
     }
   }, [gameMode]);

@@ -15,7 +15,7 @@ export default function QuizScreen3() {
     <Router>
       
         <Switch>
-          <Route exact path="/triviaQuiz3">
+          <Route exact path='/triviaQuiz3'>
             <Quiz3Home/>
           </Route>
           <Route exact path="/triviaQuiz3/3/">
@@ -28,7 +28,7 @@ export default function QuizScreen3() {
 }
 
 function Quiz3Home(){
-  let history = useHistory();
+  var history = useHistory();
 
   const [gameMode, setGameMode] = useContext(GameModeContext);
   const { go3Flag } = useContext(Quiz3Context);
@@ -39,7 +39,6 @@ function Quiz3Home(){
     setGo3(true);
     console.log(`goto ${go3}`);
     console.log(`gameMode ${gameMode}`);
-
     history.push(`/triviaQuiz3/3`);
   }
 

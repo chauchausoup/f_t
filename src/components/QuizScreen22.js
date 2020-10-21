@@ -59,7 +59,7 @@ export default function QuizScreen22() {
 
   function slowIterateQuestions(arr) {
     if (arr.length === 0) {
-      setGameMode(()=>"3");
+      setGameMode("3");
       setGo2(false);
       return;
     }
