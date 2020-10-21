@@ -14,16 +14,16 @@ import { Quiz2Context } from "../context/Quiz2Context";
 export default function QuizScreen2() {
   return (
     <Router>
-      <div>
+     
         <Switch>
           <Route exact path="/triviaQuiz2">
-            <Quiz2Home />
+            <Quiz2Home/>
           </Route>
           <Route exact path="/triviaQuiz2/2/">
-            <QuizScreen22 />
+            <QuizScreen22/>
           </Route>
         </Switch>
-      </div>
+     
     </Router>
   );
 }

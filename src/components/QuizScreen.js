@@ -23,8 +23,7 @@ export default function QuizScreen1() {
     switch (gameMode) {
       case "2":
           history.push('/triviaQuiz2')
-        
-        break;
+          break;
     }
   }, [gameMode]);
 

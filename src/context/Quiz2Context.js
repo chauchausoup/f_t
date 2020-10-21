@@ -1,7 +1,5 @@
 import React, { useState, createContext, useEffect, useContext } from "react";
 
-import uuid from "uuid";
-import { GameModeContext } from "../context/GameModeContext";
 
 export const Quiz2Context = createContext();
 
@@ -10,7 +8,6 @@ export const Quiz2Provider = (props) => {
   const [dashNo2, setDashNo2] = useState(0);
   const [dashCategory2, setDashCategory2] = useState("");
   const [colorCorrect2, setColorCorrect2] = useState(false);
-  const [gameMode, setGameMode] = useContext(GameModeContext);
   const [optioni2, setOptions2] = useState([
     { val: "", isCorrect: false },
     { val: "", isCorrect: false },

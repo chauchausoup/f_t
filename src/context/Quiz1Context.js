@@ -1,18 +1,12 @@
 import React, { useState, createContext, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
-
-import { GameModeContext } from "./GameModeContext";
 
 export const Quiz1Context = createContext();
 
 export const Quiz1Provider = (props) => {
-  //var history = useHistory();
-
   const [qText, setQuestion] = useState("");
   const [dashNo, setDashNo] = useState(0);
   const [dashCategory, setDashCategory] = useState("");
   const [quiz1Over, setQuiz1Over] = useState(false);
-  const [gameMode, setGameMode] = useContext(GameModeContext);
   const [optioni, setOptions] = useState([
     { val: "", isCorrect: false },
     { val: "", isCorrect: false },

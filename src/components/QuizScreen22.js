@@ -3,8 +3,7 @@ import Dashboard2 from "./dashboard2";
 import Questions2 from "./questions2";
 import Options2 from "./options2";
 import Users from "./users";
-import { GameModeContext } from "../context/GameModeContext";
-import { Quiz2Context } from "../context/Quiz2Context";
+
 
 import {
   BrowserRouter as Router,
@@ -12,6 +11,8 @@ import {
   useHistory,
   Switch,
 } from "react-router-dom";
+import { GameModeContext } from "../context/GameModeContext";
+import { Quiz2Context } from "../context/Quiz2Context";
 
 //generates random quiz question every 8 seconds
 import { data2 } from "../data/quiz2";
@@ -29,8 +30,7 @@ export default function QuizScreen22() {
     switch (gameMode) {
       case "3":
         console.log("game mode 3",gameMode)
-        history.push('/triviaQuiz3')
-       
+        history.push(`/triviaQuiz3`)
         break;
     }
   }, [gameMode]);
@@ -58,7 +58,6 @@ export default function QuizScreen22() {
   //deplay our array iteration
 
   function slowIterateQuestions(arr) {
-    setColorCorrect2(false);
     if (arr.length === 0) {
       setGameMode(()=>"3");
       setGo2(false);
@@ -70,6 +69,9 @@ export default function QuizScreen22() {
     setDashCategory2(arr[0].category);
     setQuestion2(arr[0].question);
     setOptions2(() => [...arr[0].optione]);
+
+    setColorCorrect2(false);
+
 
     setTimeout(() => {
       slowIterateQuestions(arr.slice(1));
