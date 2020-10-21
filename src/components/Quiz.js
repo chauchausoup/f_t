@@ -13,11 +13,12 @@ export default function Quiz() {
 
     const handleQuizButton=()=>{
         history.push(`/triviaQuiz`)
-        window.location.reload()
+        
+        //window.location.reload()
     }
     const handleQuizButton2=()=>{
         history.push(`/triviaQuiz2`)
-        window.location.reload()
+        //window.location.reload()
 
     }
     const handleQuizButton3=()=>{

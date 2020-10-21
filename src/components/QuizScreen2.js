@@ -1,9 +1,17 @@
-import React, { useContext, useState } from "react";
-import { BrowserRouter as Router, Route, useHistory,Switch } from "react-router-dom";
-import QuizScreen22 from './QuizScreen22';
-import {GameModeContext} from '../context/GameModeContext'
-import {Quiz2Context} from '../context/Quiz2Context'
-export default function QuizScreen() {
+import React, { useContext, useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  useHistory,
+  Switch,
+} from "react-router-dom";
+import QuizScreen22 from "./QuizScreen22";
+import { GameModeContext } from "../context/GameModeContext";
+import { Quiz2Context } from "../context/Quiz2Context";
+
+
+
+export default function QuizScreen2() {
   return (
     <Router>
       <div>
@@ -21,19 +29,22 @@ export default function QuizScreen() {
 }
 
 function Quiz2Home() {
-  const [gameMode, setGameMode] = useContext(GameModeContext);
-  const {go2Flag} =useContext(Quiz2Context)
-  const [go2,setGo2]=go2Flag;
-
-    let history=useHistory()
+  let history=useHistory()
   
+  const [gameMode, setGameMode] = useContext(GameModeContext);
+ const {go2Flag}=useContext(Quiz2Context)
+ const [go2,setGo2]=go2Flag;
+
+
 
   function buttonHandler() {
-    
-    history.push(`/triviaQuiz2/2/`)
-    window.location.reload()
-    setGameMode("2")
-    setGo2(true)
+    setGameMode(()=>"2");
+    setGo2(true);
+    console.log(`goto ${go2}`);
+    console.log(`gameMode ${gameMode}`);
+    history.push(`/triviaQuiz2/2/`);
+
+    //window.location.reload();
   }
 
   return (
